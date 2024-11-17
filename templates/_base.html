@@ -8,12 +8,16 @@
 
     <meta http-equiv="refresh" content="1">
     <title>{% block title %}{% endblock %}</title>
-
+    <style>
+        .image-inverted {
+            filter: invert(100%);
+        }
+    </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-        <a class="navbar-brand" href="/" aria-current="page">Strawberries Site Thingy</a>
+        <a class="navbar-brand" href="/"><img class="image-inverted" alt="MPG Logo", src="https://mpg-ge.de/files/school/LogoMitSchrift150x75.png">MPG Escape Room Sowi Kurs</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -21,26 +25,23 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" href="./Carcassonne.html">Carcassonne Erweiterungen Regelübersicht</a>
+                    <a class="nav-link{% if (self|quoted) == "index.html" %} active {% endif %}" href="./index.html">Idee</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="./stochastic.html">Stochastic Simulation</a>
+                    <a class="nav-link{% if (self|quoted) == "prozess.html" %} active {% endif %}" href="./prozess.html">Prozess</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="./calendar.html">Calendar</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="./_base.html">Hunger Games thingy</a>
+                    <a class="nav-link{% if (self|quoted) == "aufbau_material.html" %} active {% endif %}" href="./aufbau_material.html">Aufbau und Material</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
 
+<div class="p-2"></div>
 {% block body %}
 	404 - Page Not Found
 {% endblock %}
-
 
 <script src="bootstrap/dist/js/bootstrap.bundle.js"></script>
 </body>

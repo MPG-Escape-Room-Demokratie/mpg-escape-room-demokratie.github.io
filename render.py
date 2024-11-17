@@ -1,18 +1,23 @@
-import glob
-import json
-import time
-from dataclasses import dataclass
-from typing import Any, Self
+import re
 
-from watchdog.observers import Observer
-from watchdog.events import FileSystemEventHandler, FileSystemEvent
+import jinja2
 from staticjinja import Site
+
+def quoted(s):
+    l = re.findall('\'([^\']*)\'', str(s))
+    if l:
+        return l[0]
+    return None
+
 
 
 
 if __name__ == "__main__":
     site = Site.make_site(
         mergecontexts=True,
+        filters={
+            "quoted": quoted,
+        }
     )
 
     site.render(use_reloader=True)
