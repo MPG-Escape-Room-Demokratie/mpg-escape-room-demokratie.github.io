@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="/scss/custom.css" rel="stylesheet">
 
-    {# <meta http-equiv="refresh" content="1"> #}
-    <title>{% block title %}{% endblock %}</title>
+    
+    <title>
+    404 - Page not Found
+</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <style>
@@ -27,13 +29,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link{% if (self|quoted) == "index.html" %} active {% endif %}" href="./index.html">Idee</a>
+                    <a class="nav-link" href="./index.html">Idee</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link{% if (self|quoted) == "prozess.html" %} active {% endif %}" href="./prozess.html">Prozess</a>
+                    <a class="nav-link" href="./prozess.html">Prozess</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link{% if (self|quoted) == "aufbau_material.html" %} active {% endif %}" href="./aufbau_material.html">Aufbau und Material</a>
+                    <a class="nav-link" href="./aufbau_material.html">Aufbau und Material</a>
                 </li>
             </ul>
         </div>
@@ -41,9 +43,15 @@
 </nav>
 
 <div class="p-2"></div>
-{% block body %}
-	404 - Page Not Found
-{% endblock %}
+
+     <div class="container">
+        <div class="alert alert-danger" role="alert">
+
+            <h1 class="card-title"><i class="bi bi-exclamation-triangle-fill"></i> 404 - Page Not Found</h1> <br>
+            Anscheinend habt ihr euch verlaufen, nutzt bitte die Navigationsleisten oben, um zurück auf den Rest der Seite zu kommen.
+        </div>
+    </div>
+
 
 <script src="bootstrap/dist/js/bootstrap.bundle.js"></script>
 </body>
